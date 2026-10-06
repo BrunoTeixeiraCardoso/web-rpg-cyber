@@ -1,0 +1,54 @@
+{
+  "header": {
+    "logo": "⚡ PROTOCOLO_NEON_v1.0.4",
+    "menu": [
+      {"label": "// DIRETRIZES_SISTEMA", "link": "#about"},
+      {"label": "// ARQUIVOS_DE_DADOS", "link": "#features"},
+      {"label": "// TERMINAL_REDE", "link": "#community"}
+    ]
+  },
+  "hero": {
+    "title": "SHADOWPUNKS, DO DESCARTE AO COMBATE.",
+    "subtitle": "Um RPG de mesa tático sobre alta tecnologia, implantes cibernéticos ilegais e a luta brutal pela sobrevivência contra as megacorporações em uma megalópole de um futuro distópico.",
+    "primaryBtn": {
+      "label": "BAIXAR DATA_PACK .EXE",
+      "link": "#features"
+    },
+    "secondaryBtn": {
+      "label": "INICIAR INFILTRAÇÃO",
+      "link": "#about"
+    }
+  },
+  "about": {
+    "title": "O Sistema de Jogo",
+    "text": "<strong>Protocolo Neon</strong> é um sistema baseado em pools de dados d6 projetado para encontros letais e hacking em tempo real. Os jogadores assumem os papéis de <em>Netrunners, Solos, Techies ou Fixers</em> que operam nas sombras da lei, queimando neurônios e gastando créditos para garantir a próxima modificação neurológica antes que a bateria acabe."
+  },
+  "features": {
+    "title": "Datapacks Descriptografados",
+    "intro": "Acesse os módulos básicos de transmissão de dados para configurar a sua mesa de jogo imediatamente:",
+    "cards": [
+      {
+        "title": "Ficha de Registro Neural",
+        "text": "Planilha em PDF editável estruturada para rastrear atributos de hardware, software instalado, nível de dissociação e implantes.",
+        "linkLabel": "BAIXAR_FICHA.EXE &darr;",
+        "linkUrl": "#"
+      },
+      {
+        "title": "Manual de Inicialização Rápida",
+        "text": "Guia condensado de 15 páginas contendo regras de combate em grade, matriz de hacking, tabela de armas de energia e implantes.",
+        "linkLabel": "BAIXAR_MANUAL.EXE &darr;",
+        "linkUrl": "#"
+      },
+      {
+        "title": "Cartografia de Neo-Veridiana",
+        "text": "Mapa tático de alta fidelidade detalhando os limites dos setores corporativos e as zonas cinzentas de gangues.",
+        "linkLabel": "VISUALIZAR_MAPA.EXE &darr;",
+        "linkUrl": "#"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "&copy; 2026 PROTOCOLO_NEON // REGISTRO ENCRIPTADO. TODOS OS DIREITOS RESERVADOS À CORPORAÇÃO.",
+    "meta": "Status do Host: Online. Conexão criptografada via proxy quântico."
+  }
+}

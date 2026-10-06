@@ -1,0 +1,318 @@
+/* ==========================================================================
+   1. DESIGN TOKENS CYBERPUNK
+   ========================================================================== */
+:root {
+    /* Cores Cyberpunk Neon (Contraste verificado em fundos escuros) */
+    --color-bg: #050508;
+    --color-surface: #0b0c13;
+    --color-surface-hover: #131521;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #8b949e;
+    
+    /* Neons principais */
+    --color-cyan: #00f0ff;
+    --color-magenta: #ff007f;
+    --color-border: #1a1d30;
+
+    /* Tipografia Futurista */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    /* Efeitos Visuais */
+    --glow-cyan: 0 0 10px rgba(0, 240, 255, 0.5);
+    --glow-magenta: 0 0 10px rgba(255, 0, 127, 0.5);
+    --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   2. RESET & ESTILOS GLOBAIS
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--color-magenta);
+    color: white;
+    padding: 1rem;
+    z-index: 100;
+    font-family: var(--font-heading);
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* ==========================================================================
+   3. ARQUITETURA DE COMPONENTES
+   ========================================================================== */
+.layout-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Header */
+.header {
+    background-color: rgba(5, 5, 8, 0.9);
+    border-bottom: 2px solid var(--color-cyan);
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    text-shadow: var(--glow-cyan);
+}
+
+.header__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.header__link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: var(--font-heading);
+    transition: var(--transition-fast);
+}
+
+.header__link:hover {
+    color: var(--color-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 8rem 1.5rem;
+    /* Linhas de grade estéticas ao fundo que lembram o "cyber-espaço" */
+    background: 
+        linear-gradient(to bottom, rgba(5,5,8,0.3), var(--color-bg)),
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px) 0 0 / 40px 40px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero__container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.hero__title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-shadow: var(--glow-magenta);
+}
+
+.hero__subtitle {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Botões Estilo Interface (Corte angular simulado por cantos retos e bordas grossas) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2.2rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    cursor: pointer;
+    border-radius: 0px; /* Cyberpunk usa formas angulares e retas */
+}
+
+.btn--primary {
+    background-color: var(--color-cyan);
+    color: #000000;
+    border: none;
+    box-shadow: var(--glow-cyan);
+}
+
+.btn--primary:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px #ffffff;
+    transform: translateY(-2px);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-magenta);
+    border: 2px solid var(--color-magenta);
+    box-shadow: inset 0 0 4px rgba(255, 0, 127, 0.2);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-magenta);
+    color: #ffffff;
+    box-shadow: var(--glow-magenta);
+    transform: translateY(-2px);
+}
+
+/* Seções Gerais */
+.section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section__title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-cyan);
+    border-left: 4px solid var(--color-cyan);
+    padding-left: 1rem;
+}
+
+.section__content p {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Grid & Cards Corporativos */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 2.5rem 2rem;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+/* Indicador estético de canto nas caixas estilo HUD */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border-style: solid;
+    border-width: 0 12px 12px 0;
+    border-color: transparent var(--color-cyan) transparent transparent;
+}
+
+.card:hover {
+    border-color: var(--color-cyan);
+    background-color: var(--color-surface-hover);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.card__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.card__text {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.card__link {
+    color: var(--color-magenta);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+}
+
+.card__link:hover {
+    color: var(--color-text-primary);
+    text-shadow: var(--glow-magenta);
+}
+
+/* Rodapé */
+.footer {
+    background-color: #020204;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+}
+
+.footer__copyright {
+    color: var(--color-magenta);
+    margin: 0 0 0.8rem 0;
+}
+
+.footer__meta {
+    color: #444;
+}
+
+/* ==========================================================================
+   4. DESIGN RESPONSIVO
+   ========================================================================== */
+@media (min-width: 768px) {
+    .hero__title {
+        font-size: 4rem;
+    }
+
+    .hero__actions {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
